@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.liming.longan.www.bletest" >
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".LocalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/bluetooth_launch"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:launchMode="singleTop"
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:name=".activity.OneServiceActivity"
+            android:label="@string/title_activity_one_service"
+            android:parentActivityName=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liming.longan.www.bletest.activity.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activity.OneCharacteristicActivity"
+            android:label="@string/title_activity_one_characteristic"
+            android:parentActivityName=".activity.OneServiceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liming.longan.www.bletest.activity.OneServiceActivity" />
+        </activity>
+        <activity
+            android:name=".activity.AllActivity"
+            android:label="@string/title_activity_all"
+            android:parentActivityName=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liming.longan.www.bletest.activity.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activity.AddGroundActivity"
+            android:label="@string/title_activity_add_ground"
+            android:parentActivityName=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liming.longan.www.bletest.activity.MainActivity" />
+        </activity>
+        <activity
+            android:windowSoftInputMode="stateHidden"
+            android:name=".activity.GrounControlActivity"
+            android:label="@string/title_activity_groun_control"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liming.longan.www.bletest.activity.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
